@@ -23,41 +23,54 @@ Kaamiki is a simple machine learning framework for obvious tasks.
 # TODO(xames3): Add more elaborative docstring.
 
 import os
+import os.path as _os
 import sys
 
-# Raise passive exceptions if the system environment is not configured
-# correctly for Kaamiki runtime.
+# Raise active exceptions if the system environment is not configured
+# correctly for Kaamiki.
 if sys.version_info < (3,):
-    print("Python 2 has reached end-of-life and is no longer supported by "
-          "Kaamiki.")
-    quit()
+    sys.exit("Python 2 has reached end-of-life and is no longer supported "
+             "by Kaamiki.")
 
 if sys.version_info < (3, 5):
-    print("Kaamiki supports minimum python 3.6 and above. Kindly upgrade "
-          "your python interpreter to a suitable version.")
-    quit()
+    sys.exit("Kaamiki supports minimum python 3.6 and above. Kindly upgrade "
+             "your python interpreter to a suitable version.")
 
 if os.name == "nt" and sys.maxsize.bit_length() == 31:
-    print("32-bit Windows Python runtime is not supported. Please switch "
-          "to 64-bit Python.")
-    quit()
+    sys.exit("32-bit Windows Python runtime is not supported. Please switch "
+             "to 64-bit Python.")
 
 from setuptools import find_packages, setup
 
-from kaamiki import _NAME
+_NAME = "kaamiki"
 
 # This version string is semver compatible & adheres to Semantic
 # Versioning Specification (SemVer) starting with version 0.1.
 # You can read more about it here: https://semver.org/spec/v2.0.0.html
 _VERSION = "1.0.1"
+_VERSION_FLAG = 0
 
 _DOCLINES = __doc__ if __doc__.count("\n") == 0 else __doc__.split("\n")
 
 
-def use_readme() -> str:
+def _use_readme() -> str:
     """Use README.md for long description of the package."""
     with open("README.md", "r") as file:
         return file.read()
+
+
+def _cook() -> None:
+    """Prepares the required directory structure."""
+    base = _os.expanduser(f"~/.{_NAME}/")
+    # Create base directory for caching, logging and storing data of
+    # Kaamiki session. This ensures all the data generated or logged
+    # by Kaamiki is dumped at same location.
+    if not _os.exists(base):
+        os.mkdir(base)
+
+    with open(os.path.join(base, "update"), "w") as _file:
+        _file.write(f"version: {_VERSION}\n"
+                    f"check: {_VERSION_FLAG}")
 
 
 with open("requirements.txt", "r") as requirements:
@@ -118,7 +131,7 @@ setup(
     ],
     license="Apache Software License 2.0",
     description=" ".join(_DOCLINES[3:5]),
-    long_description=use_readme(),
+    long_description=_use_readme(),
     long_description_content_type="text/markdown",
     keywords="kaamiki python c++ machine learning pandas numpy cv2",
     zip_safe=False,
@@ -126,10 +139,7 @@ setup(
     python_requires="~=3.6",
     include_package_data=True,
     packages=find_packages(),
-    platform=["Windows", "Linux", "Mac OS"],
+    platform=["Windows", "Linux", "MacOS"],
 )
 
-_PATH = os.path.expanduser("~/.kaamiki/")
-# Create base directory for logging and storing data or cache files.
-if not os.path.exists(_PATH):
-    os.mkdir(_PATH)
+_cook()

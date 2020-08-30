@@ -19,8 +19,6 @@
 
 import os
 
-_NAME = "kaamiki"
-
 # Raise an exception if the environment is not correctly configured
 # with platform-specific imports. All attempts to run Kaamiki on an
 # incorrect environment will fail gracefully.
@@ -35,7 +33,6 @@ if os.name == "nt":
             import module
         except ImportError:
             missing.append(module)
-
     # See https://stackoverflow.com/a/19839338 for grammatical list
     # joining.
     if missing:
