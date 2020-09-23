@@ -263,3 +263,8 @@ class CommandLineParser(argparse.ArgumentParser):
     sys.stderr.write(f"\n{self.format_usage()}\n")
     sys.stderr.write("".join(list(itertools.chain(*self.format_help()))))
     sys.exit(1)
+
+
+def main():
+  """Entry point for Kaamiki."""
+  pass
