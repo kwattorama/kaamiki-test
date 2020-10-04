@@ -1,4 +1,4 @@
-# Copyright (c) 2020 Kaamiki Developers. All rights reserved.
+# Copyright (c) 2020 Kaamiki Development Team. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -256,7 +256,8 @@ class BabyMonitorProtocol(object, metaclass=Neo):
                                 self._window,
                                 self._program,
                                 self._url,
-                                self._domain, started,
+                                self._domain,
+                                started,
                                 stopped,
                                 seconds_spent,
                                 *time_spent)
