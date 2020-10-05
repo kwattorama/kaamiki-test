@@ -1,4 +1,4 @@
-#Kaamiki Code of Conduct#
+# Kaamiki Code of Conduct
 
 We do not publish this code because we fear inappropriate behavior, but because we already appreciate and love the extraordinary respect and values of our team. This is the basis on which we are building our Code of Conduct. We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, harassment-free and healthy environment for everyone, regardless of level of experience and education.
 
@@ -8,13 +8,13 @@ As community members, contributors and maintainers of this project, we commit to
 
 The Code of Conduct applies in particular to team interaction, including all events hosted/conducted by Kaamiki, chat and video conferences, social media communication, pull request feedback, participation in open source projects, communication with our team (and customers) and at conferences or events where we represent Kaamiki.
 
-##Our standards
+## Our standards
 
 
-###Don't just support your colleagues on demand, be proactive. Offer your help if you notice that a team member is struggling with a problem or otherwise needs help. Be careful not to be too patronizing or disrespectful. When someone turns to you for help, always be open, listen and try to put yourself in the position of your counterpart. If you don't have time because of a deadline, let the person know and tell them openly when you have time or maybe refer a team member who is just as familiar with the topic.
+##### Don't just support your colleagues on demand, be proactive. Offer your help if you notice that a team member is struggling with a problem or otherwise needs help. Be careful not to be too patronizing or disrespectful. When someone turns to you for help, always be open, listen and try to put yourself in the position of your counterpart. If you don't have time because of a deadline, let the person know and tell them openly when you have time or maybe refer a team member who is just as familiar with the topic.
 
 
-*Expected behavior that contributes to a positive environment for our community include:*
+**Expected behavior that contributes to a positive environment for our community include:**
 
 
 - Clearly convey what you want, avoid acronyms and jargon if not everyone can understand in conversation.Be inclusive
